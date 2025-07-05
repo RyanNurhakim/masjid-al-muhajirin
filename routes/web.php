@@ -25,16 +25,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('dashboard');
 
     Route::get('/masjid', function () {
-        return view('admin.masjid');
+        return view('admin.masjid.index');
     })->name('masjid');
 
     Route::get('/program', function () {
-        return view('admin.program');
+        return view('admin.program.index');
     })->name('program');
 
     Route::get('/kegiatan', function () {
-        return view('admin.kegiatan');
-    })->name('kegiatan');
+        return view('admin.kegiatan.index');
+    })->name('galeri-kegiatan');
 });
 
 // Fallback route for 404

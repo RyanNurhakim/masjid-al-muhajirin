@@ -59,11 +59,11 @@
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
                 <a href="tel:+62123456789" class="flex items-center text-emerald-600 hover:text-emerald-700">
                     <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
-                    (021) 123-4567
+                    (+62) 12-3456-7890
                 </a>
-                <a href="mailto:info@almuhajirin.org" class="flex items-center text-emerald-600 hover:text-emerald-700">
+                <a href="mailto:ymambcr@gmail.com" class="flex items-center text-emerald-600 hover:text-emerald-700">
                     <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-                    info@almuhajirin.org
+                    ymambcr@gmail.com
                 </a>
             </div>
         </div>

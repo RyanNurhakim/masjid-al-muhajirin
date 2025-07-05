@@ -57,8 +57,8 @@
                             Program
                         </a>
 
-                        <a href="{{ route('admin.kegiatan') }}"
-                            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.kegiatan') ? 'bg-emerald-700' : '' }}">
+                        <a href="{{ route('admin.galeri-kegiatan') }}"
+                            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.galeri-kegiatan') ? 'bg-emerald-700' : '' }}">
                             <i data-lucide="calendar" class="mr-3 flex-shrink-0 h-5 w-5"></i>
                             Kegiatan
                         </a>
@@ -66,7 +66,7 @@
 
                     <!-- Logout section di bawah -->
                     <div class="flex-shrink-0 px-2 mt-8 pt-4 border-t border-emerald-700">
-                        <a href="#"
+                        <a href="{{ route('login') }}"
                             class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700">
                             <i data-lucide="log-out" class="mr-3 flex-shrink-0 h-5 w-5"></i>
                             Logout
@@ -79,24 +79,17 @@
         <!-- Mobile sidebar -->
         <div x-show="sidebarOpen" class="fixed inset-0 flex z-40 lg:hidden" x-cloak>
             <!-- Overlay -->
-            <div x-show="sidebarOpen"
-                x-transition:enter="transition-opacity ease-linear duration-300"
-                x-transition:enter-start="opacity-0"
-                x-transition:enter-end="opacity-100"
-                x-transition:leave="transition-opacity ease-linear duration-300"
-                x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0"
-                class="fixed inset-0 bg-gray-600 bg-opacity-75"
+            <div x-show="sidebarOpen" x-transition:enter="transition-opacity ease-linear duration-300"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-600 bg-opacity-75"
                 @click="sidebarOpen = false"></div>
 
             <!-- Mobile sidebar content -->
-            <div x-show="sidebarOpen"
-                x-transition:enter="transition ease-in-out duration-300 transform"
-                x-transition:enter-start="-translate-x-full"
-                x-transition:enter-end="translate-x-0"
+            <div x-show="sidebarOpen" x-transition:enter="transition ease-in-out duration-300 transform"
+                x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
                 x-transition:leave="transition ease-in-out duration-300 transform"
-                x-transition:leave-start="translate-x-0"
-                x-transition:leave-end="-translate-x-full"
+                x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
                 class="relative flex-1 flex flex-col max-w-xs w-full bg-emerald-800">
 
                 <!-- Close button -->
@@ -142,8 +135,8 @@
                             Program
                         </a>
 
-                        <a href="{{ route('admin.kegiatan') }}"
-                            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.kegiatan') ? 'bg-emerald-700' : '' }}">
+                        <a href="{{ route('admin.galeri-kegiatan') }}"
+                            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.galeri-kegiatan') ? 'bg-emerald-700' : '' }}">
                             <i data-lucide="calendar" class="mr-3 flex-shrink-0 h-5 w-5"></i>
                             Kegiatan
                         </a>
@@ -196,16 +189,18 @@
                 <div class="py-6">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <!-- Flash messages -->
-                        @if(session('success'))
-                        <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                            <span class="block sm:inline">{{ session('success') }}</span>
-                        </div>
+                        @if (session('success'))
+                            <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                                role="alert">
+                                <span class="block sm:inline">{{ session('success') }}</span>
+                            </div>
                         @endif
 
-                        @if(session('error'))
-                        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                            <span class="block sm:inline">{{ session('error') }}</span>
-                        </div>
+                        @if (session('error'))
+                            <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                                role="alert">
+                                <span class="block sm:inline">{{ session('error') }}</span>
+                            </div>
                         @endif
 
                         <!-- Page content -->

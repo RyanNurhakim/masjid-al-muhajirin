@@ -3,166 +3,120 @@
 @section('title', 'Dashboard')
 @section('page-title', 'Dashboard')
 
+<?php
+$latestActivities = [
+    [
+        'title' => 'Qurban 1446 H / 2025 M',
+        'category' => 'ibadah_dakwah',
+        'date' => '2024-12-15',
+        'image' => '/images/qurban2.jpg',
+        'description' => 'Pemotongan hewan qurban oleh ketua yayasan dan pengurus masjid.',
+    ],
+    [
+        'title' => 'TPA Sore - Pembelajaran Al-Quran',
+        'category' => 'pendidikan_agama',
+        'date' => '2024-11-20',
+        'image' => '/images/tpa-1.jpg',
+        'description' => 'Pembelajaran Al-Quran untuk anak-anak setiap sore di aula masjid.',
+    ],
+    [
+        'title' => 'Layanan Ambulance Gratis',
+        'category' => 'kegiatan_sosial',
+        'date' => '2024-10-25',
+        'image' => '/images/layanan-ambulance-1.jpg',
+        'description' => 'Layanan gratis 24 jam untuk jamaah dan masyarakat umum.',
+    ],
+];
+
+?>
+
 @section('content')
-<div class="space-y-6">
-    <!-- Stats Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <div class="w-8 h-8 bg-emerald-500 rounded-md flex items-center justify-center">
-                            <i data-lucide="building" class="w-5 h-5 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Masjid</dt>
-                            <dd class="text-lg font-medium text-gray-900">1</dd>
-                        </dl>
-                    </div>
+    <div class="space-y-6">
+        <!-- HEADER -->
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Dashboard Admin</h1>
+            <p class="text-sm text-gray-600">Ringkasan data dan statistik kegiatan masjid</p>
+        </div>
+
+        <!-- STATISTIK KOTAK -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-5 rounded-xl shadow-md flex items-center space-x-4 hover:shadow-lg transition">
+                <div class="bg-emerald-100 text-emerald-600 p-3 rounded-full">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Jumlah Program</p>
+                    <p class="text-xl font-semibold text-gray-800">6</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-md flex items-center space-x-4 hover:shadow-lg transition">
+                <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full">
+                    <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Total Kegiatan</p>
+                    <p class="text-xl font-semibold text-gray-800">14</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-md flex items-center space-x-4 hover:shadow-lg transition">
+                <div class="bg-yellow-100 text-yellow-600 p-3 rounded-full">
+                    <i data-lucide="image" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Galeri Kegiatan</p>
+                    <p class="text-xl font-semibold text-gray-800">12</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-md flex items-center space-x-4 hover:shadow-lg transition">
+                <div class="bg-red-100 text-red-600 p-3 rounded-full">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Jumlah Jamaah</p>
+                    <p class="text-xl font-semibold text-gray-800">850+</p>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <div class="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
-                            <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Program Aktif</dt>
-                            <dd class="text-lg font-medium text-gray-900">8</dd>
-                        </dl>
-                    </div>
-                </div>
+        <!-- RINGKASAN KEGIATAN -->
+        <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-gray-800">Kegiatan Terbaru</h2>
+                <a href="{{ route('admin.galeri-kegiatan') }}" class="text-sm text-emerald-600 hover:underline">Lihat
+                    Semua</a>
             </div>
-        </div>
 
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <div class="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center">
-                            <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+            <div class="divide-y divide-gray-100">
+                @foreach ($latestActivities as $activity)
+                    <div class="flex items-start space-x-4 py-4">
+                        <!-- Gambar -->
+                        <img src="{{ $activity['image'] }}" alt="{{ $activity['title'] }}"
+                            class="w-20 h-14 object-cover rounded-md border shrink-0" />
+
+                        <!-- Konten -->
+                        <div class="flex-1">
+                            <!-- Title dan Kategori (1 baris, kiri-kanan) -->
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-base font-medium text-gray-900">{{ $activity['title'] }}</h3>
+                                <span
+                                    class="inline-block px-3 py-1 text-xs bg-emerald-100 text-emerald-800 rounded-full whitespace-nowrap">
+                                    {{ ucwords(str_replace('_', ' ', $activity['category'])) }}
+                                </span>
+                            </div>
+
+                            <!-- Deskripsi -->
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">
+                                {{ $activity['description'] }}
+                            </p>
+
+                            <!-- Tanggal -->
+                            <p class="text-xs text-gray-400 mt-1">
+                                {{ \Carbon\Carbon::parse($activity['date'])->format('d M Y') }}
+                            </p>
                         </div>
                     </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Kegiatan</dt>
-                            <dd class="text-lg font-medium text-gray-900">12</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <div class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
-                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Kegiatan Bulan Ini</dt>
-                            <dd class="text-lg font-medium text-gray-900">5</dd>
-                        </dl>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-
-    <!-- Recent Activities -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Recent Kegiatan -->
-        <div class="bg-white shadow rounded-lg">
-            <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Kegiatan Terbaru</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">Peringatan Maulid Nabi Muhammad SAW</p>
-                            <p class="text-xs text-gray-500">28 Des 2024, 19:00</p>
-                        </div>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            Direncanakan
-                        </span>
-                    </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">Kajian Ahad Pagi</p>
-                            <p class="text-xs text-gray-500">22 Des 2024, 06:00</p>
-                        </div>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Selesai
-                        </span>
-                    </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">Pengajian Ibu-ibu</p>
-                            <p class="text-xs text-gray-500">26 Des 2024, 14:00</p>
-                        </div>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                            Berlangsung
-                        </span>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="{{ route('admin.kegiatan') }}" class="text-sm text-emerald-600 hover:text-emerald-500">
-                        Lihat semua kegiatan →
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Active Programs -->
-        <div class="bg-white shadow rounded-lg">
-            <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Program Aktif</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">TPA Sore</p>
-                            <p class="text-xs text-gray-500">Pendidikan • Senin-Jumat, 16:00-17:30</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-xs text-gray-500">Ustadz Abdullah</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">Kajian Ahad Pagi</p>
-                            <p class="text-xs text-gray-500">Keagamaan • Ahad, 06:00-07:00</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-xs text-gray-500">Ustadz Muhammad</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-gray-900">Santunan Yatim</p>
-                            <p class="text-xs text-gray-500">Sosial • Setiap bulan</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-xs text-gray-500">Ibu Siti Aminah</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="{{ route('admin.program') }}" class="text-sm text-emerald-600 hover:text-emerald-500">
-                        Lihat semua program →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

@@ -9,12 +9,11 @@
                             <i data-lucide="university" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Al-Muhajirin</h3>
-                            <p class="text-sm text-gray-400">Yayasan Masjid</p>
+                            <h3 class="text-lg font-bold">Masjid Al-Muhajirin</h3>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        Menyebarkan cahaya Islam untuk kemajuan umat dan masyarakat sejak 1985.
+                        Menyebarkan cahaya Islam untuk kemajuan umat dan masyarakat sejak ....
                     </p>
                 </div>
 
@@ -28,28 +27,32 @@
                     </ul>
                 </div>
 
+                <?php
+                $programs = [['title' => 'Ibadah & Dakwah'], ['title' => 'Pendidikan Agama'], ['title' => 'Kegiatan Sosial'], ['title' => 'Kegiatan Remaja'], ['title' => 'Pemulasaraan Jenazah & Pemakaman']];
+                ?>
+
                 <div>
                     <h4 class="font-semibold mb-4">Program</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li>Pendidikan Agama</li>
-                        <li>Kegiatan Sosial</li>
-                        <li>Kegiatan Remaja</li>
-                        <li>Kajian Rutin</li>
+                        @foreach ($programs as $item)
+                            <li>{{ $item['title'] }}</li>
+                        @endforeach
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="font-semibold mb-4">Kontak</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li>Jl. Raya Masjid No. 123</li>
-                        <li>(021) 1234-5678</li>
-                        <li>info@almuhajirin.org</li>
+                        <li>Komplek Bukit Cimindi Raya Blok S No.8, Kel. Pasirkaliki, Kec. Cimahi Utara, Kota Cimahi,
+                            Jawa Barat 40514.</li>
+                        <li>(022) 1234-5678</li>
+                        <li>ymambcr@gmail.com</li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; {{ date('Y') }} Yayasan Masjid Al-Muhajirin. Semua hak dilindungi.</p>
+                <p>&copy; {{ date('Y') }} Masjid Al-Muhajirin. Semua hak dilindungi.</p>
             </div>
         </div>
     </div>
