@@ -7,8 +7,15 @@
     <title>@yield('title', 'Yayasan Masjid Al-Muhajirin')</title>
     <meta name="description" content="@yield('description', 'Yayasan Masjid Al-Muhajirin - Menyebarkan Cahaya Islam untuk Umat sejak 1985')">
 
-    <!-- Tailwind CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (app()->environment('local'))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+        <link rel="stylesheet" href="{{ asset('build/assets/app-Bq-wJDX7.css') }}">
+        <script src="{{ asset('build/assets/app-C_dLCnnQ.js') }}" defer></script>
+    @endif
+
+    {{-- <!-- Tailwind CSS -->
+    @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
