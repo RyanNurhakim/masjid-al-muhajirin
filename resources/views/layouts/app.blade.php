@@ -8,10 +8,17 @@
     <meta name="description" content="@yield('description', 'Yayasan Masjid Al-Muhajirin - Menyebarkan Cahaya Islam untuk Umat sejak 1985')">
 
     <!-- Tailwind CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    {{-- Deployment Sementara --}}
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         /* Custom scrollbar */
@@ -62,6 +69,7 @@
     @include('components.footer')
 
     <script>
+        lucide.createIcons();
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
