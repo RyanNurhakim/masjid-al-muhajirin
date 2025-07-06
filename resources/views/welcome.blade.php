@@ -112,9 +112,9 @@
         <!-- Hero Section -->
         <section id="beranda"
             class="relative h-screen flex items-center justify-center bg-gradient-to-r from-emerald-800 to-emerald-600 transition-all duration-1000 ease-out">
-            <div class="absolute inset-0 bg-black/40"></div>
             <img src="{{ asset('images/banner-masjid.webp') }}" alt="Masjid Al-Muhajirin"
                 class="absolute inset-0 w-full h-full object-cover brightness-80 transition-all duration-1000 ease-out">
+            <div class="absolute inset-0 bg-black/25"></div>
             <div
                 class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto opacity-0 translate-y-10 animate-fade-in-up">
                 <h1 class="text-3xl md:text-6xl font-bold mb-6 transform transition-all duration-1000 delay-300 ease-out">
