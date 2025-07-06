@@ -7,11 +7,10 @@
     <title>@yield('title', 'Yayasan Masjid Al-Muhajirin')</title>
     <meta name="description" content="@yield('description', 'Yayasan Masjid Al-Muhajirin - Menyebarkan Cahaya Islam untuk Umat sejak 1985')">
 
-    {{-- <!-- Tailwind CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <!-- Tailwind CSS -->
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
-    <!-- Tailwind CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
