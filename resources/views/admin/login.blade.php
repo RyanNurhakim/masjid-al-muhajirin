@@ -7,12 +7,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login Admin - Yayasan Masjid Al-Muhajirin</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    {{-- <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script> --}}
+
+    {{-- Deployment Sementara --}}
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="h-full bg-gray-50" x-data="loginForm()">
