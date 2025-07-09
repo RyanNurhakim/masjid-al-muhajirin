@@ -144,7 +144,8 @@
         </section>
 
         <!-- Tentang Kami -->
-        <section id="tentang" class="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        <section id="tentang"
+            class="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-56 md:scroll-mt-6"
             data-animate="fadeInUp">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
@@ -201,7 +202,8 @@
         </section>
 
         <!-- Program -->
-        <section id="program" class="py-20 bg-white opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        <section id="program"
+            class="py-20 bg-white opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-56 md:scroll-mt-6"
             data-animate="fadeInUp">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
@@ -238,8 +240,89 @@
             </div>
         </section>
 
+        <!-- Fasilitas -->
+        <section id="fasilitas"
+            class="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-56 md:scroll-mt-6"
+            data-animate="fadeInUp">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out"
+                        data-animate="fadeInUp">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fasilitas Masjid</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Berbagai fasilitas yang tersedia untuk kenyamanan jamaah dan kegiatan keagamaan
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <?php
+                        $facilities = [
+                            [
+                                'title' => 'Ruang Sholat Utama',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Ruang sholat yang luas dan nyaman dengan kapasitas hingga 500 jamaah, dilengkapi karpet berkualitas dan pendingin ruangan.',
+                            ],
+                            [
+                                'title' => 'Tempat Wudhu',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Area wudhu yang bersih dengan air mengalir dan fasilitas lengkap untuk pria dan wanita terpisah.',
+                            ],
+                            [
+                                'title' => 'TPA',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Ruang belajar khusus untuk TPA dengan kapasitas 50 anak, dilengkapi meja-kursi anak, papan tulis, dan perlengkapan mengajar. ',
+                            ],
+                            [
+                                'title' => 'Ruang Serbaguna',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Ruang multifungsi untuk kegiatan pengajian, seminar, dan acara-acara keagamaan.',
+                            ],
+                            [
+                                'title' => 'Parkir Luas',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Area parkir yang luas dan aman untuk kendaraan roda dua dan roda empat.',
+                            ],
+                            [
+                                'title' => 'Taman & Tempat Bermain',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Area bermain anak dengan permainan edukatif dan taman yang adem.',
+                            ],
+                            [
+                                'title' => 'Tempat Istirahat Musafir',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Tersedia area tempat istirahat bagi para musafir untuk beristirahat sementara dan disediakan air minum, teh, kopi, dll.',
+                            ],
+                            [
+                                'title' => 'Akses Khusus Disabilitas',
+                                'image' => 'https://dummyimage.com/300',
+                                'description' => 'Tersedia jalur khusus untuk difabel untuk memasuki ruang utama(tempat sholat).',
+                            ],
+                        ];
+                        ?>
+
+                        @foreach ($facilities as $index => $facility)
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 opacity-0 translate-y-10 ease-out"
+                                data-animate="fadeInUp" style="animation-delay: {{ ($index + 1) * 100 }}ms;">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="{{ $facility['image'] }}" alt="{{ $facility['title'] }}"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">{{ $facility['title'] }}</h3>
+                                    <p class="text-gray-600">
+                                        {{ $facility['description'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Galeri -->
-        <section id="galeri" class="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        <section id="galeri"
+            class="py-20 bg-white opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-60 md:scroll-mt-6"
             data-animate="fadeInUp">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
@@ -257,7 +340,7 @@
                             <div class="group cursor-pointer overflow-hidden rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg opacity-0 translate-y-5"
                                 data-animate="fadeInUp" style="animation-delay: {{ ($index + 1) * 100 }}ms;">
                                 <img src="{{ $item['image'] }}" alt=""
-                                    class="w-full h-48 object-cover rounded-lg group-hover:scale-110 transition-transform duration-500">
+                                    class="w-full h-40 md:h-48 object-cover rounded-lg group-hover:scale-110 transition-transform duration-500">
                             </div>
                         @endforeach
                     </div>
@@ -277,14 +360,15 @@
         </section>
 
         <!-- Donasi Section -->
-        <section class="py-20 bg-emerald-600 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        <section
+            class="py-20 bg-emerald-600 opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-52 md:scroll-mt-6"
             data-animate="fadeInUp">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out"
                         data-animate="fadeInUp">Siapkan Infaq & Shodaqoh Terbaik Anda Untuk Kemajuan
                         Masjid</h2>
-                    <p class="text-xl mb-8 opacity-90 opacity-0 translate-y-10 transition-all duration-1000 delay-400 ease-out"
+                    <p class="text-xl mb-8 opacity-0 translate-y-10 transition-all duration-1000 delay-400 ease-out"
                         data-animate="fadeInUp">
                         Setiap infaq & shodaqoh Anda adalah investasi untuk kemajuan umat dan pahala yang mengalir terus
                     </p>
@@ -301,7 +385,7 @@
                     </div>
 
                     <a href="{{ route('donasi') }}"
-                        class="inline-block transform transition-all duration-300 hover:scale-105 opacity-0 translate-y-10 transition-all duration-1000 delay-800 ease-out"
+                        class="inline-block transform transition-all duration-300 hover:scale-105 opacity-0 translate-y-10 delay-800 ease-out"
                         data-animate="fadeInUp">
                         <button
                             class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 flex items-center justify-center mx-auto cursor-pointer hover:shadow-lg">
@@ -315,7 +399,8 @@
         </section>
 
         <!-- Kontak -->
-        <section id="kontak" class="py-20 bg-white opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        <section id="kontak"
+            class="py-20 bg-white opacity-0 translate-y-10 transition-all duration-1000 ease-out scroll-mt-56 md:scroll-mt-6"
             data-animate="fadeInUp">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">

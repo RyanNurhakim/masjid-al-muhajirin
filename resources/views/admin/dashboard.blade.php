@@ -94,12 +94,17 @@ $latestActivities = [
                             class="w-20 h-14 object-cover rounded-md border shrink-0" />
 
                         <!-- Konten -->
-                        <div class="flex-1">
-                            <!-- Title dan Kategori (1 baris, kiri-kanan) -->
-                            <div class="flex justify-between items-start">
-                                <h3 class="text-base font-medium text-gray-900">{{ $activity['title'] }}</h3>
+                        <div class="flex-1 min-w-0">
+                            <!-- Title dan Kategori -->
+                            <div class="flex items-start justify-between gap-2">
+                                <!-- Title -->
+                                <h3 class="text-base font-medium text-gray-900 truncate">
+                                    {{ $activity['title'] }}
+                                </h3>
+
+                                <!-- Category -->
                                 <span
-                                    class="inline-block px-3 py-1 text-xs bg-emerald-100 text-emerald-800 rounded-full whitespace-nowrap">
+                                    class="max-w-[50%] truncate inline-block px-3 py-1 text-xs bg-emerald-100 text-emerald-800 rounded-full whitespace-nowrap">
                                     {{ ucwords(str_replace('_', ' ', $activity['category'])) }}
                                 </span>
                             </div>
@@ -117,6 +122,7 @@ $latestActivities = [
                     </div>
                 @endforeach
             </div>
+
         </div>
     </div>
 @endsection

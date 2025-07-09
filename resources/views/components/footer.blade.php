@@ -1,3 +1,9 @@
+@php
+    $isGalleryPage = request()->routeIs('galeri');
+    $isDonationPage = request()->routeIs('donasi');
+    $is404Page = request()->routeIs('404');
+@endphp
+
 <!-- Footer -->
 <footer class="bg-gray-800 text-white py-12">
     <div class="container mx-auto px-4">
@@ -5,8 +11,10 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center">
-                            <i data-lucide="university" class="w-6 h-6 text-white"></i>
+                        <div
+                            class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center overflow-hidden">
+                            <img src="{{ asset('images/logo-masjid-al-muhajirin-no-bg.png') }}" alt="Logo"
+                                class="w-full h-full object-contain" />
                         </div>
                         <div>
                             <h3 class="text-lg font-bold">Masjid Al-Muhajirin</h3>
@@ -20,10 +28,25 @@
                 <div>
                     <h4 class="font-semibold mb-4">Menu Utama</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#beranda" class="hover:text-white transition-colors">Beranda</a></li>
-                        <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
-                        <li><a href="#program" class="hover:text-white transition-colors">Program</a></li>
-                        <li><a href="#galeri" class="hover:text-white transition-colors">Galeri</a></li>
+                        <li>
+                            <a href="{{ route('home') }}#beranda" class="hover:text-white transition-colors">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home') }}#tentang" class="hover:text-white transition-colors">Tentang
+                                Kami</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home') }}#program" class="hover:text-white transition-colors">Program</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home') }}#fasilitas" class="hover:text-white transition-colors">Fasilitas</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home') }}#galeri" class="hover:text-white transition-colors">Galeri</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home') }}#kontak" class="hover:text-white transition-colors">Kontak</a>
+                        </li>
                     </ul>
                 </div>
 

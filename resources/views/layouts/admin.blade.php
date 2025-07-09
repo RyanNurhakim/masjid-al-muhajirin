@@ -67,7 +67,13 @@
                         <a href="{{ route('admin.galeri-kegiatan') }}"
                             class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.galeri-kegiatan') ? 'bg-emerald-700' : '' }}">
                             <i data-lucide="calendar" class="mr-3 flex-shrink-0 h-5 w-5"></i>
-                            Kegiatan
+                            Galeri Kegiatan
+                        </a>
+
+                        <a href="{{ route('admin.dashboard-donasi') }}"
+                            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.dashboard-donasi') ? 'bg-emerald-700' : '' }}">
+                            <i data-lucide="heart-handshake" class="mr-3 flex-shrink-0 h-5 w-5"></i>
+                            Infaq & Shodaqoh
                         </a>
                     </nav>
 
@@ -145,7 +151,7 @@
                         <a href="{{ route('admin.galeri-kegiatan') }}"
                             class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-white hover:bg-emerald-700 {{ request()->routeIs('admin.galeri-kegiatan') ? 'bg-emerald-700' : '' }}">
                             <i data-lucide="calendar" class="mr-3 flex-shrink-0 h-5 w-5"></i>
-                            Kegiatan
+                            Galeri Kegiatan
                         </a>
                     </nav>
                 </div>
@@ -174,7 +180,7 @@
                 <!-- Top bar content -->
                 <div class="flex-1 px-4 flex justify-between items-center">
                     <div class="flex-1">
-                        <h1 class="text-2xl font-semibold text-gray-900">@yield('page-title', 'Dashboard')</h1>
+                        <h1 class="text-xl md:text-2xl font-semibold text-gray-900">@yield('page-title', 'Dashboard')</h1>
                     </div>
 
                     <!-- User menu -->

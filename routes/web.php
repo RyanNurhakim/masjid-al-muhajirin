@@ -35,6 +35,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/kegiatan', function () {
         return view('admin.kegiatan.index');
     })->name('galeri-kegiatan');
+
+    Route::get('/donasi', function () {
+        return view('admin.donasi.index');
+    })->name('dashboard-donasi');
 });
 
 // Fallback route for 404

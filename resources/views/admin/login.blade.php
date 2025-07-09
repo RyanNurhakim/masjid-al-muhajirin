@@ -36,7 +36,7 @@
                     Admin Dashboard
                 </h2>
                 <p class="mt-2 text-sm text-gray-600">
-                    Yayasan Masjid Al-Muhajirin
+                    Masjid Al-Muhajirin
                 </p>
             </div>
 
@@ -149,7 +149,7 @@
             <!-- Footer -->
             <div class="text-center">
                 <p class="text-sm text-gray-600">
-                    © 2024 Yayasan Masjid Al-Muhajirin. All rights reserved.
+                    © 2025 Yayasan Masjid Al-Muhajirin. Semua Hak Dilindungi.
                 </p>
             </div>
         </div>

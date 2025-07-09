@@ -13,6 +13,10 @@
         "Noto Color Emoji";
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
